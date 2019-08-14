@@ -4,7 +4,7 @@ import java.lang.StringBuilder
 import java.util.*
 
 /**
- * 设计一个有getMing功能的栈
+ * 设计一个有getMin功能的栈
  *
  * 题目：实现一个特殊的栈，在实现栈的基本功能基础上，在实现返回栈中最小元素的操作.
  *
