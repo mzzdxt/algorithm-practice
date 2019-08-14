@@ -30,10 +30,10 @@ class CatDogQueue : IOperation {
     override fun add(pet: Pet) {
         when (pet.type) {
             "cat" -> {
-                catQueue.add(PetWrapper(Pet("cat"), index++))
+                catQueue.add(PetWrapper(Cat(), index++))
             }
             "dog" -> {
-                dogQueue.add(PetWrapper(Pet("dog"), index++))
+                dogQueue.add(PetWrapper(Dog(), index++))
             }
             else -> {
                 throw RuntimeException("Pet Type Error.Current type is ${pet.type}")
