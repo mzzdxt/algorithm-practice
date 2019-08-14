@@ -35,7 +35,7 @@ class MyStack1 : MyStack() {
         // 数据直接进入保存数据的栈
         mStackData.push(item)
 
-        if (mStackMin.isEmpty()) {
+        if (mStackMin.empty()) {
             mStackMin.push(item)
         } else if (item <= mStackMin.peek()) {
             // 注意判断条件为"<="，而不是"<"
@@ -44,7 +44,7 @@ class MyStack1 : MyStack() {
     }
 
     override fun pop(): Int {
-        if (mStackData.isEmpty()) {
+        if (mStackData.empty()) {
             throw RuntimeException("StackData is empty.")
         }
 
@@ -58,7 +58,7 @@ class MyStack1 : MyStack() {
     }
 
     override fun getMin(): Int {
-        if (mStackMin.isEmpty()) {
+        if (mStackMin.empty()) {
             throw RuntimeException("StackMin is empty.")
         }
 
@@ -71,7 +71,7 @@ class MyStack2 : MyStack() {
         // 数据直接进入保存数据的栈
         mStackData.push(item)
 
-        if (mStackMin.isEmpty()) {
+        if (mStackMin.empty()) {
             mStackMin.push(item)
         } else if (item <= mStackMin.peek()) {
             // 注意判断条件为"<="，而不是"<"
@@ -82,7 +82,7 @@ class MyStack2 : MyStack() {
     }
 
     override fun pop(): Int {
-        if (mStackData.isEmpty()) {
+        if (mStackData.empty()) {
             throw RuntimeException("StackData is empty.")
         }
 
@@ -92,7 +92,7 @@ class MyStack2 : MyStack() {
     }
 
     override fun getMin(): Int {
-        if (mStackMin.isEmpty()) {
+        if (mStackMin.empty()) {
             throw RuntimeException("StackMin is empty.")
         }
 
