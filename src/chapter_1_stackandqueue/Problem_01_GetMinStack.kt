@@ -11,11 +11,27 @@ import java.util.*
  * 要求：1.push，pop，getMin操作的时间复杂度都是O(1)。
  *      2.设计的栈类型可以使用现有的栈结构。
  */
-class MyStack1 {
-    private val mStackData = Stack<Int>()
-    private val mStackMin = Stack<Int>()
+abstract class MyStack {
+    protected val mStackData = Stack<Int>()
+    protected val mStackMin = Stack<Int>()
 
-    fun push(item: Int) {
+    abstract fun push(item: Int)
+    abstract fun pop(): Int
+    abstract fun getMin(): Int
+
+    fun printStack() {
+        val sb = StringBuilder()
+        mStackData.forEach {
+            sb.append("$it ")
+        }
+
+        print("MinData: ${this.getMin()} -> ")
+        println("StackData: $sb")
+    }
+}
+
+class MyStack1 : MyStack() {
+    override fun push(item: Int) {
         // 数据直接进入保存数据的栈
         mStackData.push(item)
 
@@ -27,7 +43,7 @@ class MyStack1 {
         }
     }
 
-    fun pop(): Int {
+    override fun pop(): Int {
         if (mStackData.isEmpty()) {
             throw RuntimeException("StackData is empty.")
         }
@@ -41,30 +57,17 @@ class MyStack1 {
         return value
     }
 
-    fun getMin(): Int {
+    override fun getMin(): Int {
         if (mStackMin.isEmpty()) {
             throw RuntimeException("StackMin is empty.")
         }
 
         return mStackMin.peek()
     }
-
-    fun printStack() {
-        val sb = StringBuilder()
-        mStackData.forEach {
-            sb.append("$it ")
-        }
-
-        print("MinData: ${this.getMin()} -> ")
-        println("StackData: $sb")
-    }
 }
 
-class MyStack2 {
-    private val mStackData = Stack<Int>()
-    private val mStackMin = Stack<Int>()
-
-    fun push(item: Int) {
+class MyStack2 : MyStack() {
+    override fun push(item: Int) {
         // 数据直接进入保存数据的栈
         mStackData.push(item)
 
@@ -78,7 +81,7 @@ class MyStack2 {
         }
     }
 
-    fun pop(): Int {
+    override fun pop(): Int {
         if (mStackData.isEmpty()) {
             throw RuntimeException("StackData is empty.")
         }
@@ -88,22 +91,12 @@ class MyStack2 {
         return mStackData.pop()
     }
 
-    fun getMin(): Int {
+    override fun getMin(): Int {
         if (mStackMin.isEmpty()) {
             throw RuntimeException("StackMin is empty.")
         }
 
         return mStackMin.peek()
-    }
-
-    fun printStack() {
-        val sb = StringBuilder()
-        mStackData.forEach {
-            sb.append("$it ")
-        }
-
-        print("MinData: ${this.getMin()} -> ")
-        println("StackData: $sb")
     }
 }
 
@@ -118,7 +111,7 @@ fun main(args: Array<String>) {
 
     println("==============================")
 
-    val myStack2 = MyStack1()
+    val myStack2 = MyStack2()
     myStack2.push(3)
     myStack2.push(5)
     myStack2.push(1)
