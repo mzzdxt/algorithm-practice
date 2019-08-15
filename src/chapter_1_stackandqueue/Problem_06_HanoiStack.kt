@@ -1,7 +1,6 @@
 package chapter_1_stackandqueue
 
 import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * 用栈来求解汉诺塔问题
