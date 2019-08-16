@@ -8,8 +8,12 @@
 - [03-如何仅用递归函数和栈操作逆序一个栈](./src/chapter_1_stackandqueue/Problem_03_ReverseStackUsingRecursive.kt)（尉 ★★☆☆）
 
 - [04-猫狗队列](./src/chapter_1_stackandqueue/Problem_04_DogCatQueue.kt)（士 ★☆☆☆）
+
 - [05-用一个栈实现另一个栈的排序](./src/chapter_1_stackandqueue/Problem_05_StackSortStack.kt)（士 ★☆☆☆）
-- 用栈来求解汉诺塔问题（校 ★★★☆）
+
+- [06-用栈来求解汉诺塔问题](./src/chapter_1_stackandqueue/Problem_06_HanoiStack.kt)（校 ★★★☆）
+
+- [07-生成窗口最大值数组](./src/chapter_1_stackandqueue/Problem_07_SlidingWindowMaxArray.kt)（尉 ★★☆☆）
 - 单调栈结构（尉 ★★☆☆）
 - 求最大子矩阵的大小（校 ★★★☆）
 - 最大值减去最小值小于或等于num的子数组数量（校 ★★★☆）
