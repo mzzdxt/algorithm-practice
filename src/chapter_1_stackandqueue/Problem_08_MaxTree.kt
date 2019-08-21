@@ -1,5 +1,6 @@
 package chapter_1_stackandqueue
 
+import extension.TreeNode
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -8,21 +9,16 @@ import kotlin.collections.HashMap
 /**
  * 构造数组的MaxTree
  */
-class Node(val value: Int) {
-    var left: Node? = null
-    var right: Node? = null
-}
-
-fun getMaxTree(arr: ArrayList<Int>): Node? {
-    val nArr = arrayOfNulls<Node>(arr.size)
+fun getMaxTree(arr: ArrayList<Int>): TreeNode? {
+    val nArr = arrayOfNulls<TreeNode>(arr.size)
 
     for ((index, value) in arr.withIndex()) {
-        nArr[index] = Node(value)
+        nArr[index] = TreeNode(value)
     }
 
-    val stack = Stack<Node>()
-    val lBigMap = HashMap<Node, Node?>()
-    val rBigMap = HashMap<Node, Node?>()
+    val stack = Stack<TreeNode>()
+    val lBigMap = HashMap<TreeNode, TreeNode?>()
+    val rBigMap = HashMap<TreeNode, TreeNode?>()
 
     for (node in nArr) {
         while (!stack.isEmpty() && stack.peek().value < node!!.value) {
@@ -50,7 +46,7 @@ fun getMaxTree(arr: ArrayList<Int>): Node? {
         popStackSetMap(stack, rBigMap)
     }
 
-    var head: Node? = null
+    var head: TreeNode? = null
 
     for (node in nArr) {
         val left = lBigMap[node]
@@ -94,7 +90,7 @@ fun getMaxTree(arr: ArrayList<Int>): Node? {
     return head
 }
 
-fun popStackSetMap(stack: Stack<Node>, map: HashMap<Node, Node?>) {
+fun popStackSetMap(stack: Stack<TreeNode>, map: HashMap<TreeNode, TreeNode?>) {
     val popNode = stack.pop()
 
     map[popNode] = if (stack.isEmpty()) {
@@ -107,7 +103,7 @@ fun popStackSetMap(stack: Stack<Node>, map: HashMap<Node, Node?>) {
 /**
  * 先序遍历
  */
-fun printPreOrder(head: Node?) {
+fun printPreOrder(head: TreeNode?) {
     if (head == null) {
         return
     }
@@ -120,7 +116,7 @@ fun printPreOrder(head: Node?) {
 /**
  * 中序遍历
  */
-fun printInOrder(head: Node?) {
+fun printInOrder(head: TreeNode?) {
     if (head == null) {
         return
     }

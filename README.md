@@ -20,7 +20,7 @@
 ## 第2章 链表问题
 
 - [01-打印两个有序链表的公共部分](./src/chapter_2_listproblem/Problem_01_PrintCommonPart.kt)（士 ★☆☆☆）
-- 在单链表和双链表中删除倒数第K个节点（士 ★☆☆☆）
+- [02-在单链表和双链表中删除倒数第K个节点](./src/chapter_2_listproblem/Problem_02_RemoveLastKthNode.kt)（士 ★☆☆☆）
 - 删除链表的中间节点和a/b处的节点（士 ★☆☆☆）
 - 反转单向和双向链表（士 ★☆☆☆）
 - 反转部分单向链表（士 ★☆☆☆）
